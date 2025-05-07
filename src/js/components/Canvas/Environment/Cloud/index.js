@@ -23,12 +23,12 @@ export default ({size}) => {
     uTime: {value: 0},
     uTxtShape: {value: t1},
     uTxtCloudNoise: {value: t2},
-    uFac1: {value: 17.8},
-    uFac2: {value: 2.7},
-    uTimeFactor1: {value: 0.002},
-    uTimeFactor2: {value: 0.0015},
-    uDisplStrenght1: {value: 0.04},
-    uDisplStrenght2: {value: 0.08},
+    uFac1: {value: 30.8},
+    uFac2: {value: 12.7},
+    uTimeFactor1: {value: 0.003},
+    uTimeFactor2: {value: 0.0042},
+    uDisplStrenght1: {value: 0.02},
+    uDisplStrenght2: {value: 0.05},
   }), [t1])
 
   const material = useMemo(() => {
@@ -63,18 +63,18 @@ export default ({size}) => {
   /**
    * DAT GUI
    */
-  useEffect(() => {
-    if (material) {
-      gui.get((gui) => {
-        gui.add(material.uniforms.uFac1, 'value', 0.00001, 30).step(0.1).name('1-ScaleFactor')
-        gui.add(material.uniforms.uTimeFactor1, 'value', 0.00001, 0.009).step(0.0001).name('1-TimeFactor')
-        gui.add(material.uniforms.uDisplStrenght1, 'value', 0.00001, 0.3).step(0.01).name('1-Strength')
-        gui.add(material.uniforms.uTimeFactor2, 'value', 0.00001, 0.009).step(0.0001).name('2-TimeFactor')
-        gui.add(material.uniforms.uFac2, 'value', 0.00001, 100).name('2-ScaleFactor')
-        gui.add(material.uniforms.uDisplStrenght2, 'value', 0.00001, 0.3).step(0.01).name('2-Strength')
-      })
-    }
-  }, [material])
+  // useEffect(() => {
+  //   if (material) {
+  //     gui.get((gui) => {
+  //       gui.add(material.uniforms.uFac1, 'value', 0.00001, 30).step(0.1).name('1-ScaleFactor')
+  //       gui.add(material.uniforms.uTimeFactor1, 'value', 0.00001, 0.009).step(0.0001).name('1-TimeFactor')
+  //       gui.add(material.uniforms.uDisplStrenght1, 'value', 0.00001, 0.3).step(0.01).name('1-Strength')
+  //       gui.add(material.uniforms.uTimeFactor2, 'value', 0.00001, 0.009).step(0.0001).name('2-TimeFactor')
+  //       gui.add(material.uniforms.uFac2, 'value', 0.00001, 100).name('2-ScaleFactor')
+  //       gui.add(material.uniforms.uDisplStrenght2, 'value', 0.00001, 0.3).step(0.01).name('2-Strength')
+  //     })
+  //   }
+  // }, [material])
 
 
   return (

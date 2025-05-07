@@ -7,7 +7,7 @@ export default () => {
   return (
     <>
       <Background />
-      <Cloud size={[2.048, 2.348]} />
+      <Cloud size={[10.048, 12.348]} />
     </>
   )
 }
